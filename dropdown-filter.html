@@ -1,0 +1,13 @@
+<div class="dropdown-filter">
+  <input class="dropdown-filter-input" type="text" ng-model="search" required>
+  <label class="dropdown-filter-label">Scarlett is fantastic in...</label>
+  <div class="dropdown-filter-list">
+    <div class="dropdown-filter-item animate" ng-repeat="item in list | filter: search ? search : '-999' | limitTo: 7" ng-click="select(item)">
+      <span class="dropdown-filter-item-header">
+        <span ng-bind-html="item.title | highlight: search"></span>
+        <small ng-bind-html="item.year | highlight: search"></small>
+      </span>
+      <span class="dropdown-filter-item-sub" ng-bind-html="item.role | highlight: search"></span>
+    </div>
+  </div>
+</div>
